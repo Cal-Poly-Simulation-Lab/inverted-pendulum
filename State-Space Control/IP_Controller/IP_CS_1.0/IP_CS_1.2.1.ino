@@ -60,7 +60,7 @@ void readIMU(float *theta, float *theta_dot) {
   imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
   imu::Vector<3> gyro = bno.getVector(Adafruit_BNO055::VECTOR_GYROSCOPE);
 
-  *theta = euler.y() * DEG_TO_RAD;
+  *theta = euler.x() * DEG_TO_RAD;
   *theta_dot = gyro.x() * DEG_TO_RAD;
 }
 
